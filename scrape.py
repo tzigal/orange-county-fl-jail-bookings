@@ -14,7 +14,7 @@ def ftp_get_pdf():
     ftp.quit()
 
 def extract_text_from_pdf():
-    os.system('cd /Users/Gal/Dropbox/Crime-clusters/scraping; java -jar pdfbox-app-2.0.12.jar ExtractText bookings.pdf bookings.txt')
+    os.system('cd ###YOUR_DIRECTORY_HERE###; java -jar pdfbox-app-2.0.12.jar ExtractText bookings.pdf bookings.txt')
 #print(extract_text_from_pdf('bookings.pdf'))
   
 
@@ -263,22 +263,7 @@ def build_data():
         
     
     return data
-'''
-def print_to_file():
-# open output text file for various diagnostics:
-    filename="output/output.csv"
-    file_text_output=open(filename,'w')
-# print summary of clustering results:
-    print(('last_name', 'first_name','Date', 'Race', 'Gender', 'Ethnicity','Age', 'Agency', 'Crime_designation','Crime'),\
-          file=file_text_output)
-    for line in range (0,len(data)):
-        crime_string = ','.join(data[line][8])
-        print(data[line][0],',',data[line][1],',',data[line][2],',',data[line][3],',',\
-                 data[line][4],',',data[line][5],',',data[line][6],',',data[line][7],',',crime_string,\
-              file=file_text_output)
-    file_text_output.close()
-    os.system("open -a TextEdit.app output/output.csv")
-'''    
+
 def save_data():
     with open('data.pkl', 'wb') as f:  # Python 3: open(..., 'wb')
         pickle.dump([data], f)
@@ -307,6 +292,5 @@ extract_text_from_pdf()
 date = extract_date_from_text_file()
 data_raw = process_text_file()
 data = build_data()
-#print_to_file()
 save_data()
 rename_file()
