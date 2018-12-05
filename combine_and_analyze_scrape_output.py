@@ -1,12 +1,10 @@
+#See README for more information on data
 import pickle
 import os
 import itertools
 import matplotlib.pyplot as plt
 from collections import Counter as counter
 import numpy as np
-
-
-os.chdir('/Users/Gal/Dropbox/Crime-clusters/scraping/output/')
 
 def list_files_in_directory():
     #os.chdir('/Users/Gal/Dropbox/Crime-clusters/scraping/output/')
@@ -172,7 +170,6 @@ def analyze_crime_type_by_agency():
 
 def print_to_file():
     # open output text file 
-    os.chdir('/Users/Gal/Dropbox/Crime-clusters/scraping/analysis/')
     filename= crime_name_master+' analysis.txt'
     file_text_output=open(filename,'w')
     # print summary of clustering results:
