@@ -1,4 +1,4 @@
-#See README for more information on data
+#See README for more information on data. Enter the crime you are interested in on line 191.
 import pickle
 import os
 import itertools
