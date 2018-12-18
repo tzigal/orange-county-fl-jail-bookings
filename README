@@ -6,249 +6,820 @@ Some notes on how the Orange County Jail collects race data: They have two categ
 
 A list of crimes, as they appear in the database: 
 
-'Agg. Battery (Great Bodily Harm) Dom. Vio.',
- 'Aggr. Battery/Pregnant Person/Dom. Viol.',
- 'Aggravated Assault (Dating Violence)',
- 'Aggravated Assault (Domestic Violence)',
- 'Aggravated Assault With A Deadly Weapon',
- 'Aggravated Assault With A Firearm',
- 'Aggravated Assault With A Motor Vehicle',
- 'Aggravated Assault With A Weapon',
- 'Aggravated Assault With Firearm (Dom Vio)',
- 'Aggravated Asst W/ Deadly Weapon (Dom Vio)',
- 'Aggravated Battery',
- 'Aggravated Battery (Alternative)/Dom. Vio.',
- 'Aggravated Battery On A Pregnant Person',
- 'Aggravated Battery With A Firearm',
- 'Aggravated Battery With A Motor Vehicle',
- 'Aggravated Battery With A Weapon',
- 'Aggravated Stalking (Domestic Violence)',
- 'Aggravated Stalking After An Injunction',
- 'Aggravated Stalking With A Credible Threat',
- 'Alcoholic Beverages Open Containers',
- 'Armed Burglary Of Dwelling With A Firearm',
- 'Arson Of Dwelling',
- 'Assault',
- 'Assault (Domestic Violence)',
- 'Assault On Law Enforcement Officer',
- 'Assignation To Commit Prostitution',
- 'Assignation To Commit Prostitution-Sub Off',
- 'Assignation/Commit Prostitution (3Rd+ Off)',
- 'Att. Second Degree Murder With A Firearm',
- 'Attach Tag/Lic Plate To Unassigned Vehicle',
- 'Attempted Burglary Of A Conveyance',
- 'Attempted Burglary Of Dwelling',
- 'Attempted Destruction Of Evidence',
- 'Attempted Homicide',
- 'Attempted Robbery With A Deadly Weapon',
- 'Battery',
- 'Battery (Dating Violence)',
- 'Battery (Domestic Violence)',
- 'Battery (One Prior Battery) (Dom. Viol.)',
- 'Battery (Two Prior Batteries)',
- 'Battery By Strangulation-Dating Violence',
- 'Battery By Strangulation-Domestic Violence',
- 'Battery On Law Enforcement Officer',
- 'Battery On Person 65 Years Of Age Or Older',
- 'Burglary Of Conveyance',
- 'Burglary Of Dwelling',
- 'Burglary Of Occupied Dwelling',
- 'Burglary To An Unoccupied Structure',
- 'Camping Prohibited; Exceptions',
- 'Carrying A Concealed Firearm',
- 'Carrying A Concealed Weapon',
- 'Carrying A Concealed Weapon By Conv. Felon',
- 'Child Abuse',
- 'Conspir.-Traffic>400 Gms Cocaine W/Firearm',
- 'Contempt Of Court',
- 'Contempt Of Court (Civil)',
- 'Contributing To The Delinquency Of A Minor',
- 'Criminal Mischief (<=$200)',
- 'Criminal Mischief (>$200 <$1000)',
- 'Criminal Mischief (>=$1000)',
- 'Cruelty To Animals',
- 'Dealing In Stolen Property (Trafficking)',
- "Del. Of Cannabis Within 1000'/Pl. Worship",
- 'Destruction Of Evidence',
- 'Disorderly Conduct',
- 'Disorderly Intoxication',
- 'Disposing Of Lighted Cigars Etc.',
- 'Disturbing The Peace At A Public Lodging',
- 'Drive With Suspended Revoked License',
- 'Driving While Lic. Suspended(2 Prior Conv)',
- 'Driving While License Revoked As Hab. Off.',
- 'Driving While License Suspended (Dwls)',
- 'Driving While License Suspended (Sub. Off)',
- 'Dui - 3 Prior Convictions',
- 'Dui - Driving While Under The Influence',
- 'Dui - Prior Conviction',
- 'Dui Property Damage Or Personal Injury',
- 'Dui With Property Damage',
- 'Dui-Driving Under The Influence (Bal>=.15)',
- 'Dui-Driving Under The Influence (Bal>=.20)',
- 'Dui-Unlaw Bld Alch-Refuse To Submit Dui Test After',
- 'Escape',
- 'Exposure Of Sexual Organs',
- 'Failure Of Defendant To Appear',
- 'Failure To Appear-Felony Warrant',
- 'Failure To Register As A Convicted Felon',
- 'False Imprisonment',
- 'False Imprisonment (Dating Violence)',
- 'False Imprisonment (Domestic Violence)',
- 'False Proof Motor Vehicle  Insurance',
- 'False Registration By Sexual Offender',
- 'False Reports Of Commission Of Crimes',
- 'False Reports To Law Enf. Auth./Cap. Fel.',
- 'False Verif/Ownership/2Nd Hand Dealer<$300',
- 'Felony Battery',
- 'Felony Battery (Great Bodily Harm)',
- 'Flee./Att. Elude A Leo/Siren & Lights Act.',
- 'Forgery',
- 'Fraud-False Statement-False Medicaid Claim 10K Dol',
- 'Fraud-Illeg Use Credit Cards-Avoid Or Att Avoid Pa',
- 'Fraud-Imperson-Know Intent Unlaw Posses 5',
- 'Fraud-Imperson-Use Id Of Another >50K',
- 'Fugitive From Justice (Arrest W/O Warrant)',
- 'Giving False Information',
- 'Grand Theft 3Rd Degree (>$300 <$5000)',
- 'Grand Theft 3Rd Degree-Firearm',
- 'Grand Theft 3Rd Degree-Motor Vehicle',
- 'Grand Theft >=$100 From Dwelling/Curtilage',
- 'Grand Theft First Degree($100000 Or More)',
- 'Introduce Contraband In County Facility',
- 'Kidnapping (Domestic Violence)',
- 'Larc-Petit Theft From Merchant 3Rd Subsq Off',
- 'Lease/Rent-Purpose Trafficking Cont. Subs.',
- 'Leave Scene Of A Crash W/Property Damage',
- 'Lewd / Lascivious Exhibition(By Person>17)',
- 'Lewd Lascv Behavior-Conduct By Person 18 Yoa Or Ol',
- 'Lewd Or Lascivious Battery',
- 'Lewd Or Lascivious Conduct (By Person>17)',
- 'Lewd Or Lascivious Molestation (Vt<12 Yoa)',
- 'Lewd/Lascivious Molestation>=18 (Vt 12-15)',
- 'Loitering Or Prowling',
- 'Manufacturing A Controlled Substance',
- 'Moving Traffic Viol-Knowingly Drive While Lic Susp',
- 'Neglect Of A Child',
- 'No Motor Vehicle Registration',
- 'No Valid Driver License (Nvdl)',
- 'Obscene Communication-Travel To Meet After Use Com',
- 'Obst. Of Traffic To Solicit W/O Permit',
- 'Obtaining Prop By Fraud >=$20000 <$50000',
- 'Open Container',
- 'Out-Of-County Warrant-',
- 'Panhandling',
- 'Perjury When Not In An Official Proceeding',
- 'Petit Theft',
- 'Petit Theft (2 Prior Convictions)',
- 'Petit Theft (Prior Theft Conviction)',
- 'Petit Theft (Retail)',
- 'Petit Theft Of $100 Or More',
- 'Poss 34-Methyl-Metham(Mdma/Ecstasy) W/Int',
- 'Poss 34-Methylen.-Methamp. (Mdma/Ecstasy)',
- 'Poss Alcohol On Street/Sidewalk/Alleyways',
- 'Poss Of Firearm/Ammo By Convicted Felon',
- 'Poss. Antishoplifting/Invn. Control Device',
- 'Poss. Cannabis W/Intent Sell/Del. W/Weapon',
- 'Poss. Conc. Weapon/Firearm By Conv. Felon',
- 'Poss. Contr Substance W/Intent To Purchase',
- 'Poss. New/Legend Drug W/Out Prescription',
- 'Poss. Of Ammunition By Convicted Felon',
- 'Poss. Of Cannabis >20 Gms (With A Weapon)',
- 'Poss. Of Cannabis W/Intent To Sell/Deliver',
- 'Poss. Of Cocaine W/I To Sell/Del W/Firearm',
- "Poss. Of Cocaine W/In 1000' Of Conv. Bus.",
- 'Poss. Of Cocaine W/Intent To Sell/Deliver',
- 'Poss. Of Firearm By A Convicted Delinquent',
- 'Poss. Of Firearm In Commission Of Felony',
- 'Possess Place/Structure Know Sell Drugs',
- 'Possession Of Alprazolam',
- 'Possession Of Amphetamine',
- 'Possession Of Cannabis < 20 Grams',
- 'Possession Of Cannabis > 20 Grams',
- 'Possession Of Cocaine',
- 'Possession Of Cocaine (With A Weapon)',
- 'Possession Of Controlled Substance',
- 'Possession Of Counterfeit Drivers License',
- 'Possession Of Drug Paraphernalia',
- 'Possession Of Fentanyl',
- 'Possession Of Firearm By Convicted Felon',
- 'Possession Of Hashish',
- 'Possession Of Hashish W/Intent To Sell/Del',
- 'Possession Of Heroin',
- 'Possession Of Hydrocodone (Lorcet/Vicodin)',
- 'Possession Of Methamphetamine',
- 'Possession Of Methamphetamine (W/A Weapon)',
- 'Possession Of Methamphetamine With Intent',
- 'Possession Of Oxycodone (Percocet)',
- 'Possession Of Schedule V Controlled Subst.',
- 'Possession Of Tetrahydrocannabinols',
- 'Prostitution',
- 'Providing False Id To Law Enforcement Off.',
- 'Rec. Money From Pwnbkr/False Verif.(<$300)',
- 'Reckless Driving',
- 'Refusal/Submit/Bld/Brt Test After Arrest',
- 'Refuse To Submit To Dui Test',
- 'Resist Officer-Interfere W Leo Wo Violence',
- 'Resisting A Merchant',
- 'Resisting Merchandise Recovery',
- 'Resisting Officer With Violence',
- 'Resisting Officer Without Violence',
- 'Retail Theft 300 More Dols Coordinate',
- 'Retail Theft >$300',
- 'Return Per Court Order',
- 'Return Per Court Order - State Facility',
- 'Robbery',
- 'Robbery (Subsequent Force)',
- 'Robbery With A Deadly Weapon',
- 'Robbery: Armed With A Deadly Weapon',
- 'Sale/Del. Of Cannabis W/Out Consideration',
- 'Sale/Delivery Of Cannabis W/Cons. Or >20Gm',
- 'Sale/Delivery Of Cocaine',
- 'Sale/Delivery Of Heroin',
- 'Sanitary Nuisance',
- 'Sex Offender Violation-Fail To Register As Require',
- 'Sex Offender Violation-Fail To Report Email Addres',
- 'Sex Offender Violation-Fail To Report Vaca',
- 'Sex Offender Violations-Fail To Report Name Or Res',
- 'Sexual Battery On A Child Under 12',
- 'Shoot/Throw Missile Into Dwell/Struct/Veh.',
- 'Solici To Commit Pros/Lewd/Assig (Sub Off)',
- 'Solicit.To Commit Prostitution/Assignation',
- 'Solicitation To Commit Prostitution',
- 'Soliciting W/O Permit',
- 'Stalking (Dating Violence)',
- 'State Misdemeanors',
- 'Tampering W/Witness To Hinder Comm. To Leo',
- 'Tampering With Physical Evidence',
- 'Theft Of State Funds > $100000',
- 'Threat To Leo Pub Offl. Or Family Member',
- 'Threatening A Public Servant',
- 'Trafficking In Cannabis >25 Lbs. W/Firearm',
- 'Trafficking In Cocaine >28 <200 Grams',
- 'Trafficking In Cocaine >28 Grams W/Firearm',
- 'Tres.-School Grounds Or Fac. After Warning',
- 'Trespass (Simple)',
- 'Trespass After Warning In Conveyance',
- 'Trespass In Dwelling',
- 'Trespass In Occupied Structure/Conveyance',
- 'Trespass In Structure',
- 'Trespass On Property After Warning',
- 'Trespassing In Structure Or Conveyance',
- 'Trf. Hydromorphone(Dilaudid) >4 <14 Grams',
- 'Unlawful Use Of A Two-Way Commun. Device',
- 'Use Antishoplifting/Inven. Control Device',
- 'Uttering A Forged Check',
- 'Uttering Forged Bills / Notes',
- 'Uttering Forgery',
- 'Violation Of Condition Of Pretrial Release',
- 'Violation Of Conditional Release',
- 'Violation Of County Ordinance',
- 'Violation Of Domestic Injunction',
- 'Violation Of Domestic Injunction/Contact',
- 'Violation Of Drug Probation',
- 'Violation Of Florida Pawnbroker Act',
- 'Violation Of Parole',
- 'Violation Of Probation',
- 'Violation Of Probation - Out Of County',
- 'Written Threats To Kill Or Do Bodily Harm'
+
+'Abandonment Of Animals'
+'Abuse Of Elderly Or Disabled Adult'
+'Abuse/Miuse Temp Tag To Avoid Veh. Regist.'
+'Acc. After The Fact-2Nd Degree Murd. W/Fa'
+'Accessory After The Fact To Life/1St Deg.'
+'Agg. Assault On A Leo (W/ A Deadly Weapon)'
+'Agg. Bat./Person>65 Yoa/Great Bodily Harm'
+'Agg. Batt(Great Bodily Harm)W/Firearm'
+'Agg. Batt. On Person >65 Yoa W/Deadly Weap'
+'Agg. Battery (Great Bodily Harm W/Firearm)'
+'Agg. Battery (Great Bodily Harm) Dom. Vio.'
+'Agg. Battery (Great Bodily Harm) W/Weapon'
+'Agg. Battery On Leo With A Deadly Weapon'
+'Agg. Battery W/Mv On Person > 65'
+'Agg. Battery With A Weapon (Dom. Viol.)'
+'Agg. Battery With Weapon (Dating Violence)'
+'Agg. Battery/Great Bodily Harm/Dating Viol'
+'Aggr. Abuse Elderly/Disab. Adult (W/Wpn.)'
+'Aggr. Assault On A Law Enforcement Officer'
+'Aggr. Battery/Pregnant Person/Dating Viol.'
+'Aggr. Battery/Pregnant Person/Dom. Viol.'
+'Aggr. Flee/Att Elude A Leo W/Inj/Prop.Dam.'
+'Aggr. Fleeing/Elude W/Injury Or Damage'
+'Aggr. Stalking Credible Threat (W/Weapon)'
+'Aggrav Battery-Commit Aggravated Battery'
+'Aggravated Abuse Of Elderly/Disabled Adult'
+'Aggravated Assault'
+'Aggravated Assault (Dating Violence)'
+'Aggravated Assault (Domestic Violence)'
+'Aggravated Assault On Leo W/Motor Vehicle'
+'Aggravated Assault Upon A Pregnant Person'
+'Aggravated Assault W/Firearm/Code Inspect.'
+'Aggravated Assault W/Weapon (Dom. Viol.)'
+'Aggravated Assault With A Deadly Weapon'
+'Aggravated Assault With A Firearm'
+'Aggravated Assault With A Motor Vehicle'
+'Aggravated Assault With A Weapon'
+'Aggravated Assault With Firearm (Dom Vio)'
+'Aggravated Asst W/ Deadly Weapon (Dom Vio)'
+'Aggravated Battery'
+'Aggravated Battery (Alternative)'
+'Aggravated Battery (Alternative)/Dom. Vio.'
+'Aggravated Battery (Great Bodily Harm)'
+'Aggravated Battery On A Pregnant Person'
+'Aggravated Battery On A Pregnant Person/Wp'
+'Aggravated Battery W/Deadly Wpn. (Dom Vio)'
+'Aggravated Battery With A Deadly Weapon'
+'Aggravated Battery With A Firearm'
+'Aggravated Battery With A Firearm (Disch.)'
+'Aggravated Battery With A Motor Vehicle'
+'Aggravated Battery With A Weapon'
+'Aggravated Battery With Firearm (Dom Vio)'
+'Aggravated Battery/Permanent Disfigurement'
+'Aggravated Child Abuse'
+'Aggravated Stalking (Dating Violence)'
+'Aggravated Stalking (Domestic Violence)'
+'Aggravated Stalking After A Court Prohibi.'
+'Aggravated Stalking After An Injunction'
+'Aggravated Stalking With A Credible Threat'
+'Aggravated White Collar Crime'
+'Aiding And Abetting For Prostitution'
+'Alcoholic Beverages Open Containers'
+'Armed Burg. Of Conv. With Expl./Dang. Weap'
+'Armed Burg. Of Dwell. W/Expl./Dang. Weap'
+'Armed Burglary'
+'Armed Burglary Of Conveyance W/Firearm'
+'Armed Burglary Of Dwelling With A Firearm'
+'Armed Burglary Of Occ. Conveyance W/Batt.'
+'Armed Burglary Of Occupied Dwelling'
+'Armed Burglary Of Structure With A Firearm'
+'Armed Possession Of Cannabis > 20 Grams'
+'Armed Trespass In Conveyance'
+'Armed Trespass In Occupied Conveyance'
+'Armed Trespass In Structure'
+'Arson Of Dwelling'
+'Arson Resulting In Injury To Another'
+'Arson Structure/Persons Normally Present'
+'Assault'
+'Assault (Dating Violence)'
+'Assault (Domestic Violence)'
+'Assault On A Person 65 Yoa Or Older'
+'Assault On A Security Officer'
+'Assault On Emergency Medical Care Provider'
+'Assault On Law Enforcement Officer'
+'Assignation To Commit Prostitution'
+'Assignation To Commit Prostitution-Sub Off'
+'Assignation/Commit Prostitution (3Rd+ Off)'
+'Att. Aggravated  Battery W/Deadly Weapon'
+'Att. Armed Burg. Of An Occupied Dwelling'
+'Att. First Degree Murder W/Firearm/Disch.'
+'Att. First Degree Murder W/Firearm/Premed.'
+'Att. First Degree Murder With A Firearm'
+'Att. First Degree Murder With A Weapon'
+'Att. Kid. W/Intent To Inflict Harm/Terr.'
+'Att. Robbery W/Firearm/Destructive Device'
+'Att. Second Degree Murder (With A Weapon)'
+'Att. Second Degree Murder With A Firearm'
+'Attach Tag/Lic Plate To Unassigned Vehicle'
+'Attempted Aggravated Battery With Firearm'
+'Attempted Armed Burglary Of A Conveyance'
+'Attempted Battery'
+'Attempted Burglary Of A Conveyance'
+'Attempted Burglary Of Dwelling'
+'Attempted Burglary Of Occupied Conveyance'
+'Attempted Burglary Of Occupied Structure'
+'Attempted Burglary Of Structure'
+'Attempted Criminal Mischief (>=$1000)'
+'Attempted Destruction Of Evidence'
+'Attempted False Imprisonment'
+'Attempted Felony Murder(Enumerated)Firearm'
+'Attempted First Degree Murder'
+'Attempted Fraudulent Use Of A Credit Card'
+'Attempted Homicide'
+'Attempted Lewd Or Lascivious Molestation'
+'Attempted Manslaughter By Act With Weapon'
+'Attempted Purchase Of Cocaine'
+'Attempted Purchase Of Heroin'
+'Attempted Robbery'
+'Attempted Robbery (Sudden Snatching)'
+'Attempted Robbery With A Deadly Weapon'
+'Attempted Robbery With A Firearm'
+'Attempted Robbery With A Firearm And Mask'
+'Attempted Robbery With A Weapon'
+'Attempted Second Degree Murder'
+'Attempted Sexual Battery (Child Under 12)'
+'Attempted Tampering With Evidence'
+'Attempted Tampering With Physical Evidence'
+'Attempted Trafficking In Cocaine >400 Gms.'
+'Attempted Trespass In Structure'
+'Attempted Uttering Of A Forged Instrument'
+'Battery'
+'Battery (Dating Violence)'
+'Battery (Domestic Violence)'
+'Battery (One Prior Battery)'
+'Battery (One Prior Battery) (Dom. Viol.)'
+'Battery (Two Prior Batteries)'
+'Battery By Strangulation-Dating Violence'
+'Battery By Strangulation-Domestic Violence'
+'Battery On A Corrections Officer'
+'Battery On A Firefighter'
+'Battery On A Public Transit Employee/Agent'
+'Battery On Juv. Det./Comm. Facility Staff'
+'Battery On Law Enforcement Officer'
+'Battery On Person 65 Years Of Age Or Older'
+'Battery On School Employee'
+'Battery On Uniformed/Lic. Security Officer'
+'Battery-On Sports Official During Or After Contest'
+'Being In Park After Hours (City Commons/Eola Park'
+'Boating Under The Influence'
+'Bribery'
+'Burglary Of Conveyance'
+'Burglary Of Conveyance W/Assault/Battery'
+'Burglary Of Conveyance W/Asst./Bat.'
+'Burglary Of Dwelling'
+'Burglary Of Dwelling W/Assault Or Battery'
+'Burglary Of Dwelling W/Asst./Batt.W/Weapon'
+'Burglary Of Dwelling W/Asst/Bat W/Firearm'
+'Burglary Of Dwelling W/Asst/Bat.(Dom Vio)'
+'Burglary Of Occ. Dwelling W/Assault/Batt.'
+'Burglary Of Occupied Conveyance'
+'Burglary Of Occupied Conveyance With Mask'
+'Burglary Of Occupied Dwelling'
+'Burglary Of Occupied Structure'
+'Burglary Of Occupied Structure With A Mask'
+'Burglary Of Structure'
+'Burglary Of Structure W/Asst/Bat W/Firearm'
+'Burglary Of Structure W/Asst/Batt W/Weapon'
+'Burglary Of Structure While Wearing A Mask'
+'Burglary Of Structure With Assault/Battery'
+'Burglary Of Unoccupied Dwelling'
+'Burglary To An Unoccupied Structure'
+'Burglary Unoccupied Structure/Conveyance'
+'Burglary With Assault Or Battery'
+'Camping Prohibited; Exceptions'
+'Carjacking'
+'Carjacking With A Firearm'
+'Carrying A Concealed Firearm'
+'Carrying A Concealed Weapon'
+'Carrying A Concealed Weapon By Conv. Felon'
+'Carrying Concealed Weapon-Poss Or In Veh In Restri'
+'Cash/Deposit/Worthless Item W/Int. Defraud'
+'Child Abuse'
+"Comm. Driver Poss > 1 Valid Driver'S Lic."
+'Commission Of State Misdemeanors'
+'Computer Pornography'
+'Conduct/Participate Enterprise/Racketeer'
+'Consp To Sell/Deliver Controlled Substance'
+'Consp. Commit Grand Theft >$300 <$5000'
+'Consp. Traff. In Cannabis >25 Lbs/300 Plt.'
+'Conspir.-Traffic>400 Gms Cocaine W/Firearm'
+'Conspiracy - Grand Theft 2Nd Degree'
+'Conspiracy To Commit Arson'
+'Conspiracy To Commit Petit Theft'
+'Conspiracy To Commit Robbery W/Firearm'
+'Conspiracy To Possess Cannabis > 20 Grams'
+'Conspiracy To Sell/Deliver Cocaine'
+'Conspiracy To Sell/Deliver Heroin'
+'Conspiracy To Traffic In Cocaine >400 Gms'
+'Conspiracy To Traffic In Heroin >14 Grams'
+'Conspiracy To Traffic In Heroin >28 Grams'
+'Conspiracy/R.I.C.O.'
+'Contempt Of Court'
+'Contempt Of Court (Civil)'
+'Contempt Of Court (Felony)'
+'Contempt Of Court (Misdemeanor)'
+'Contempt Of Court-'
+'Contempt Of Court-Offender Violate No Contact Orde'
+'Contempt Of Court-Viol Inj Phoning Contact'
+'Contempt Of Court-Viol Inj Win 500 Ft Pet Resid Sc'
+'Contempt Of Court-Viol Injunction Stalking'
+'Contrib Delinq Minor-Cause Child Commit Act Of Del'
+'Contributing To The Delinquency Of A Minor'
+'Counterfeit Validation Sticker/Motor Veh.'
+'County Ordinance Viol'
+'Credit Card Theft (Poss.W/Intent Use/Sell)'
+'Criminal Mischief (<=$200)'
+'Criminal Mischief (<=$200) (Subs. Offense)'
+'Criminal Mischief (>$200 <$1000)'
+'Criminal Mischief (>$200<$1000) Subs. Off'
+'Criminal Mischief (>=$1000)'
+'Criminal Mischief (Place Of Worship)'
+'Cruelty To Animals'
+'Cultivation Of Cannabis'
+'Dealing In Stolen Property (Initiating)'
+'Dealing In Stolen Property (Trafficking)'
+'Defacing Traffic Device (>=$1000)'
+'Defrauding A Merchant'
+'Defrauding An Innkeeper < $300'
+'Defrauding An Innkeeper > $300'
+"Del. Of Cannabis Within 1000' Of Conv.Bus."
+"Del. Of Cannabis Within 1000'/Pl. Worship"
+"Del. Of Cocaine Within 1000' Of Conv. Bus."
+"Del. Of Heroin Within 1000' Of Conv. Bus."
+'Delivery/Manufacture Of Drug Paraphernalia'
+'Depriving Ofc. Of Means Of Protection/Comm'
+'Deriving Support- Proceeds Of Prostitution'
+'Desertion'
+'Destroy/Damage/Alter Elect. Monitor Device'
+'Destruction Of Evidence'
+'Direct/Transport For Purpose Prostitution'
+'Discharging Firearm In Public'
+'Disorderly Conduct'
+'Disorderly Conduct At Public Establishment'
+'Disorderly Intoxication'
+'Disposing Of Lighted Cigars Etc.'
+'Disturbing The Peace At A Public Lodging'
+'Dl Suspended For Financial Responsibility'
+'Drive With Suspended Revoked License'
+'Drive With Suspended Revoked License Subsq'
+'Driving W/Lic. Susp.-W/Death/Serious Inj.'
+'Driving While Lic. Suspended(2 Prior Conv)'
+'Driving While License Permanently Revoked'
+'Driving While License Revoked As Hab. Off.'
+'Driving While License Suspended (Dwls)'
+'Driving While License Suspended (Sub. Off)'
+'Drug Equip-Possess-Use Poss Mfgr Paraphernalia To'
+'Drugs-Possess-Possession Of A Controlled S'
+'Drugs-Sell-Sale Of Synthetic Cannabinoids'
+'Drugs-Traffic-1G More Lysergic Acid Diethylamide ('
+'Drugs-Traffic-Trafficking In Fentanyl 4 Gr'
+'Dui - 2 Prior Convictions'
+'Dui - 3 Prior Convictions'
+'Dui - Driving While Under The Influence'
+'Dui - Prior Conviction'
+'Dui Manslaughter'
+'Dui Property Damage Or Personal Injury'
+'Dui While Accompanied By A Minor'
+'Dui With Property Damage'
+'Dui With Serious Bodily Injury'
+'Dui-2 Prior Conv. (3Rd Dui W/In 10 Years)'
+'Dui-Driving Under The Influence (Bal>=.15)'
+'Dui-Driving Under The Influence (Bal>=.20)'
+'Dui-Unlaw Bld Alch-.15 Or Higher Or W Pers'
+'Dui-Unlaw Bld Alch-Refuse To Submit Dui Test After'
+'Dui-Unlaw Bld Alch-Refuse To Submit To Bui Test'
+'Escape'
+'Escape (Department Of Corrections)'
+'Escape During Transport'
+'Expired Drivers License ( > 4 Months )'
+'Expired Drivers License ( > 6 Months )'
+'Exploit. Of Elderly/Disabled >=$10K <$50K'
+'Exposure Of Sexual Organs'
+'Extortion'
+'Fail To Reg As Sex Offender-Fail To Report'
+'Fail To Return Hired/Leased/Pers.Prop>=300'
+'Fail/Change Registration Addr. > 20 Days'
+'Failure Of Defendant To Appear'
+'Failure Of Sex. Off./Report Sheriff/Fdle'
+'Failure Of Sex. Off./Report/Birth Month'
+'Failure Sexual Offender Register Quarterly'
+'Failure To Appear-Felony Warrant'
+'Failure To Produce Minor To The Court'
+'Failure To Provide Id After Warning'
+'Failure To Redeliver Hired Vehicle'
+'Failure To Register As A Convicted Felon'
+'Failure To Report Child Abuse'
+'Failure/Sex. Off./Rpt. D.L. Office/Renew'
+'Failure/Transient Sex Off Report 30 Days'
+'False 911 Calls'
+'False And Fraudulent Insurance Claims'
+'False Impersonation Of Cert./Registrant'
+'False Imprisonment'
+'False Imprisonment (Dating Violence)'
+'False Imprisonment (Domestic Violence)'
+'False Imprisonment With A Weapon'
+'False Info To Leo During Investigation'
+'False Information'
+'False Official Statements'
+'False Proof Motor Vehicle  Insurance'
+'False Registration By Sexual Offender'
+'False Reports Of Commission Of Crimes'
+'False Reports To Law Enf. Auth./Cap. Fel.'
+'False Reports To Law Enforcement Auth.'
+'False Verif/Ownership/2Nd Hand Dealer<$300'
+'False Verif/Ownership/2Nd Hand Dealer>=300'
+'False/Fraudulent Motor Vehicle Ins. Appl.'
+'Federal Charge Remand Hold Civil No Cch En'
+'Felony Battery'
+'Felony Battery (Great Bodily Harm)'
+'Fighting And Baiting Animals'
+'First Degree Murder With A Firearm'
+'Flee./Att. Elude A Leo/Siren & Lights Act.'
+'Flee/Att Elude Leo/High Speed Pur/Disregrd'
+'Fleeing/Att. To Elude Police Officer >7/04'
+'Forcing/Coercing Another To Prostitute'
+'Forgery'
+'Forgery Of A Credit Card'
+'Forgery Of Bank Bills/Prom. Notes'
+'Fraud-False Statement-False Medicaid Claim 10K Dol'
+'Fraud-False Statement-False Medicaid Claim More 10'
+'Fraud-Illeg Use Credit Cards-Avoid Or Att Avoid Pa'
+'Fraud-Imperson-Create Poss Use Fictitious Personal'
+'Fraud-Imperson-Fraud Use Id Wo Consent Vic'
+'Fraud-Imperson-Know Intent Unlaw Posses 5'
+'Fraud-Imperson-Misrepresent Self Commit Personal I'
+'Fraud-Imperson-Officer Public Employee Uti'
+'Fraud-Imperson-Use Id Of Another >50K'
+'Fraud-Imperson-Use Poss Personal Id Deceas'
+'Fraud-Obtain Fuel By Fraud'
+'Fraud-Pay For Medicaid Refer More 10K Less 50K Dol'
+'Fraud-Pay For Medicaid Referral 10K Dols Or Less'
+'Fraud-Possess Sell Or Deliver Skimming Dev'
+'Fraud. Use Credit Card More Than 2 Times'
+'Fraud. Use Of Personal Id-Benefit >$5000'
+'Fraud. Use Of Personal Ident. Information'
+'Fraud. Use Personal Id -Person Over 60 Yoa'
+'Fraud. Use Personal Id-Person Under 18 Yoa'
+'Fraudulent Use Of Credit Cards (<$100)'
+'Fraudulent Use Of Credit Cards (>=$100)'
+'Fugitive From Justice (Arrest W/O Warrant)'
+'Fugitive Warrant (Arrest With Warrant)'
+'Giving False Information'
+'Giving False Name Adversely Affect Another'
+'Grand Theft 2Nd Degree (20000 Or More)'
+'Grand Theft 3Rd Degree (>$10000<$20000)'
+'Grand Theft 3Rd Degree (>$300 <$5000)'
+'Grand Theft 3Rd Degree (>$5000<$10000)'
+'Grand Theft 3Rd Degree >$10000 (Scheme)'
+'Grand Theft 3Rd Degree >$300 (Scheme)'
+'Grand Theft 3Rd Degree >$5000 (Scheme)'
+'Grand Theft 3Rd Degree-Firearm'
+'Grand Theft 3Rd Degree-Motor Vehicle'
+'Grand Theft >=$100 From Dwelling/Curtilage'
+'Grand Theft By Contractor (>$300 <$5000)'
+'Grand Theft By Hotel Employee'
+'Grand Theft First Degree W/Damage >$1000'
+'Grand Theft First Degree($100000 Or More)'
+'Grand Theft Of A Stop Sign'
+'Grand Theft Of Controlled Substance'
+'Grand Theft Of Motor Vehicle With A Mask'
+'Handbill Distribution Prohibited'
+'Harm To A Public Servant'
+'Health-Safety-Own Operate Non Registered Pharmacy'
+'Hit And Run-Acc Unattended Veh Or Prop Wo'
+'Home Invasion Robbery'
+'Home Invasion Robbery (With A Firearm)'
+'Human Traf Com Sex Lt 18 Yoa Ment Def'
+'Human Traf Comm Sex Act Lt 18 Yoa'
+'Human Trafficking - Child < 18 Yoa'
+'Importation Of Cannabis'
+'Improper Exhibition Of Weapon Or Firearm'
+'Indecent Exposure'
+'Intimidation-Threat W Death Ser Bodily Har'
+'Intimidation-Threat W Death Serious Bodily'
+'Introduce Contraband In County Facility'
+'Introduce Contraband In State Facility'
+'Kid. W/Int. To Inflict Harm/Terror W/Weap.'
+'Kid. W/Intent To Commit A Felony W/Firearm'
+'Kid. W/Intent To Inflict Harm Or Terrorize'
+'Kid.W/Int.To Inflict Harm/Terror W/Firearm'
+'Kidnap-Coerce Comm Sex Activity Adult For'
+'Kidnapping (Dating Violence)'
+'Kidnapping (Domestic Violence)'
+'Kidnapping A Child Under The Age Of 13'
+'Kidnapping With Intent To Commit A Felony'
+'Kidnapping-Inflict Bodily Harm'
+'Knowingly Receive Money With Invalid Title'
+'Larc-Grand Theft Of Controlled Substance'
+'Larc-Petit Theft From Merchant 3Rd Subsq Off'
+'Lease/Rent-Purpose Trafficking Cont. Subs.'
+'Leave Scene Of A Crash W/Property Damage'
+'Leaving Child Unatt/Unsup In Motor Vehicle'
+'Leaving Scene Crash W/Serious Bod Injuries'
+'Leaving Scene Of A Crash With Injuries'
+'Leaving Scene Of Acc./Unatt. Veh. Or Prop.'
+'Lewd / Lascivious Exhibition(By Person>17)'
+'Lewd Exhibition Via Computer'
+'Lewd Lascv Behavior-Conduct By Person 18 Yoa Or Ol'
+'Lewd Lascv Behavior-Exhibition Off 18 Yoa Older Vi'
+'Lewd Or Lascivious Battery'
+'Lewd Or Lascivious Conduct (By Person>17)'
+'Lewd Or Lascivious Mol. (Jla) (Vt<12 Yoa)'
+'Lewd Or Lascivious Molestation (Vt<12 Yoa)'
+'Lewd/Lascivious Molestation<18 (Vt<12 Yoa)'
+'Lewd/Lascivious Molestation>=18 (Vt 12-15)'
+'Littering'
+'Littering On Public Property Lakes And Private Property Prohibited'
+'Loitering For Unlawful Purpose'
+'Loitering Or Prowling'
+'Making False Affidavit - Perjury'
+'Making False Report-Knowingly Give False I'
+'Manufacturing A Controlled Substance'
+'Misrepresentation Of Insurance'
+'Motor Vehicle Title Fraud'
+'Moving Traffic Viol-Knowingly Drive While Lic Susp'
+'Moving Traffic Viol-Reckless Driving 1St Off'
+'Municipal Ordiinance Viol'
+'Neglect Of A Child'
+'Neglect Of A Child-Great Bodily Harm/Disab'
+'Negligent Storage Of Firearm'
+'No Motor Vehicle Registration'
+'No Motorcycle License'
+'No Valid Driver License (Nvdl)'
+'Nuisances Injurious To Health'
+'Obscene Communication-Travel To Meet After Use Com'
+'Obscene Communication-Use Comp Seduce Soli'
+'Obst. Of Traffic To Solicit W/O Permit'
+'Obstruct Criminal Invest-False Info To Leo Re Miss'
+'Obstructing Justice-Tampering In 2Nd Degree Felony'
+'Obstructing Justice-Tampering In 3Rd Degree Felony'
+'Obstructing Justice-Tampering In Misdemeanor Proce'
+'Obstructing Or Opposing A Police Officer'
+'Obstructing Traffic'
+'Obstruction By Disguised Person'
+'Obstruction By False Information'
+'Obtain/Att. To Obtain Hydrocodone By Fraud'
+'Obtain/Attempt To Obtain Drug By Fraud'
+'Obtaining D.L. By Fraud'
+'Obtaining Food/Lodging W/Intent To Defraud'
+'Obtaining Prop By Fraud >=$20000 <$50000'
+'Obtaining Public Assist. Of $200 Or More'
+'Obtaining Vehicle With Intent To Defraud'
+'Open Carrying Of Weapons/Firearms'
+'Open Container'
+'Open Container (On County-Owned Property)'
+'Open Display Of Firearm'
+'Out-Of-County Warrant-'
+'Panhandling'
+'Park Closing Hours'
+'Parks And Facilities Closing Hours Presence After Closing Hours Prohibited'
+'Parole/Prob/Cc Viol. Interstate Compact Wa'
+'Participate In Unlawful Race'
+'Participate In Unlawful Race (Subs. Off.)'
+'Pass Forged-Altered Id To Secondhand Dealer Under'
+'Perjury In Official Capital Proceedings'
+'Perjury When Not In An Official Proceeding'
+'Petit Theft'
+'Petit Theft (2 Prior Convictions)'
+'Petit Theft (Prior Theft Conviction)'
+'Petit Theft (Retail)'
+'Petit Theft (Taxi-Cab)'
+'Petit Theft Of $100 Or More'
+'Poss  Animal In Violation Of Fighting Act'
+'Poss 34-Methyl-Metham(Mdma/Ecstasy) W/Int'
+'Poss 34-Methyl. Metham(Mdma/Ecstasy)>10Gm'
+'Poss 34-Methylen.-Methamp. (Mdma/Ecstasy)'
+'Poss Alcohol On Street/Sidewalk/Alleyways'
+"Poss Heroin W/1000' Pub.Housing W/Int/Sell"
+'Poss Mat Depict Sex Per By Child >10 Image'
+'Poss Of Firearm/Ammo By Convicted Felon'
+'Poss Property In Violation Of Fighting Act'
+'Poss. 34-Methylenedioxy-N-Ethylamph.(Mde)'
+'Poss. And Consumption Of Alcohol Prohib. In Public Parking Lots Certain Private Places And Vehicles'
+'Poss. Antishoplifting/Invn. Control Device'
+"Poss. Can. W/I To Sell W/I 1000' Of School"
+"Poss. Cann. W/1000' Conv. Bus. W/Int. Sell"
+'Poss. Cannabis W/Intent Sell/Del. W/Weapon'
+"Poss. Cocaine W/1000' Con. Bus. W/Int.Sell"
+"Poss. Cocaine W/Int.To Sell W/1000' School"
+'Poss. Cocaine W/Intent Sell/Del. W/Weapon'
+"Poss. Con. Sub. W/1000' Bus. W/Int. Sell"
+'Poss. Conc. Weapon/Firearm By Conv. Felon'
+'Poss. Concealed Weapon By Convicted Felon'
+'Poss. Contr Substance W/Intent To Purchase'
+'Poss. Counterfeit Credit Cards (2 Or More)'
+'Poss. Counterfeit Subst. W/Intent To Sell'
+"Poss. Heroin W/1000' Conv. Bus. W/Int.Sell"
+'Poss. Hydrocodone(Lor/Vic) W/Int. Sell/Del'
+'Poss. Legend Drug W/Out Presc. W/Intent'
+'Poss. Mat. Depicting Sexual Perf. By Child'
+'Poss. New/Legend Drug W/Out Prescription'
+'Poss. Of 3 Grams >Less Synthetic Cannabis'
+'Poss. Of A Weapon By A Convicted Felon'
+'Poss. Of Alprazolam With Intent To Sell'
+'Poss. Of Ammo. By A Convicted Delinquent'
+'Poss. Of Ammunition By Convicted Felon'
+'Poss. Of Cannabis >20 Gms (With A Weapon)'
+'Poss. Of Cannabis W/Intent To Distribute'
+'Poss. Of Cannabis W/Intent To Sell/Deliver'
+'Poss. Of Cocaine W/I To Sell/Del W/Firearm'
+"Poss. Of Cocaine W/In 1000' Of Conv. Bus."
+'Poss. Of Cocaine W/Intent To Sell/Deliver'
+'Poss. Of Cocaine With Intent To Distribute'
+'Poss. Of Firearm By A Convicted Delinquent'
+'Poss. Of Firearm In Commission Of Felony'
+'Poss. Of Heroin W/Intent To Sell/Deliver'
+'Poss. Of Lysergic Acid Diethylamide (Lsd)'
+'Poss. Of Prescription Drug W/O Script'
+'Poss. Of Weapon In Commission Of Felony'
+'Poss. Short-Barreled GunRifleMachine Gun'
+'Poss./Controlled Subst.In  County Facility'
+'Possess Counterfeited-10 Or More Certain Bills Not'
+'Possess Place/Structure Know Sell Drugs'
+'Possess Structure/Traffic Contr. Substance'
+"Possession > 1 Florida Driver'S License"
+'Possession Of A Concealed Weapon'
+'Possession Of A Controlled Substance'
+'Possession Of A Firearm W/Serial # Removed'
+'Possession Of A Weapon On School Property'
+'Possession Of Alcohol By Person Under 21'
+'Possession Of Alprazolam'
+'Possession Of Amphetamine'
+'Possession Of Buprenorphine'
+'Possession Of Burglary Tools'
+'Possession Of Cannabis < 20 Grams'
+'Possession Of Cannabis > 20 Grams'
+'Possession Of Cocaine'
+'Possession Of Cocaine (With A Weapon)'
+'Possession Of Cocaine W/Intent To Purchase'
+'Possession Of Codeine'
+'Possession Of Cont. Subs. W/Intent To Sell'
+'Possession Of Controlled Substance'
+'Possession Of Counterfeit Drivers License'
+'Possession Of Credit Card Making Equipment'
+'Possession Of Diazepam (Valium)'
+'Possession Of Drug Parapher W/Int. To Sell'
+'Possession Of Drug Paraphernalia'
+'Possession Of Fentanyl'
+'Possession Of Fictitious Id'
+'Possession Of Firearm By Convicted Felon'
+'Possession Of Firearm W/Altered Serial No.'
+'Possession Of Forged Notes'
+'Possession Of Grocery Cart Or Dairy Case'
+'Possession Of Hashish'
+'Possession Of Hashish W/Intent To Sell/Del'
+'Possession Of Heroin'
+'Possession Of Hydrocodone (Lorcet/Vicodin)'
+'Possession Of Hydromorphone (Dilaudid)'
+'Possession Of Lorazepam'
+'Possession Of Methadone'
+'Possession Of Methamphetamine'
+'Possession Of Methamphetamine (W/A Weapon)'
+'Possession Of Methamphetamine With Intent'
+'Possession Of Methylenediox-Amphetamine'
+'Possession Of Morphine'
+'Possession Of Oxycodone (Percocet)'
+'Possession Of Oxycodone (Tylox)'
+'Possession Of Oxycontin'
+'Possession Of Schedule V Controlled Subst.'
+"Possession Of Suspended Driver'S License"
+'Possession Of Tetrahydrocannabinols'
+'Possession Of Unauthorized Driver License'
+'Possession Of Unsigned Prescription Form'
+'Possession Of Weapon-Or Ammo By Gang-Related Felon'
+'Possession Of Xanax'
+'Possession Stolen/Counterfeit Credit Card'
+'Possesssion Of A Re-Embossed Credit Card'
+'Practicing Law Without A License'
+'Principal 1St Degree-Grand Theft Motor Veh'
+'Principal To Criminal Mischief >=$1000'
+'Principal To Grand Theft Third Degree'
+'Principal To Import Cannabis Into State'
+'Principal To Sale/Delivery Of Cocaine'
+'Prostitution'
+'Prostitution (3Rd+ Offense)'
+'Prostitution (Subsequent Offender)'
+'Providing False Id To Law Enforcement Off.'
+'Providing False Info./I.D. /Obtain Firearm'
+'Public Order Crimes-Criminal Attempt Solic'
+'Public Order Crimes-Fail To Timely Release Inspect'
+'Public Order Crimes-Keep Pub Nuisance Structure Fo'
+'Public Order Crimes-Misuse 911 Or E911 Sys'
+'Purchase Of Cannabis  (Marijuana)'
+'Purchase Of Heroin'
+'R.I.C.O.'
+'Rec. Money From Pwnbkr/False Verif(>=$300)'
+'Rec. Money From Pwnbkr/False Verif.(<$300)'
+'Reckless Driving'
+'Reckless Driving (Alcohol Related)'
+'Reckless Driving (Damage Person/Property)'
+'Refusal/Submit/Bld/Brt Test After Arrest'
+'Refuse To Submit To Dui Test'
+'Renting Space To Be Used For Prostitution'
+'Resist Officer-Interfere W Leo W Violence'
+'Resist Officer-Interfere W Leo Wo Violence'
+'Resisting A Merchant'
+'Resisting Merchandise Recovery'
+'Resisting Officer With Violence'
+'Resisting Officer Without Violence'
+'Retail Theft 300 More Dols Coordinate'
+'Retail Theft > $300 (Subsequent Offense)'
+'Retail Theft >$300'
+'Return Per Court Order'
+'Return Per Court Order - State Facility'
+'Robbery'
+'Robbery (Subsequent Force)'
+'Robbery (Sudden Snatching W/Firearm)'
+'Robbery (Sudden Snatching)'
+'Robbery With A Deadly Weapon'
+'Robbery With A Deadly Weapon And Mask'
+'Robbery With A Firearm'
+'Robbery With Threat Of A Weapon'
+'Robbery:  Armed With A Weapon'
+'Robbery: Armed With A Deadly Weapon'
+'Sale/Del 34-Methylen-Meth. (Mdma/Ecstasy)'
+"Sale/Del. Cann. W/In 1000'/Child Care Fac."
+"Sale/Del. Of Cannabis W/In 1000' Of School"
+'Sale/Del. Of Cannabis W/Out Consideration'
+"Sale/Del. Of Cocaine W/In 1000' Of School"
+'Sale/Del. Of Lysergic Acid Diethylam.(Lsd)'
+"Sale/Del/Mfg/Poss Cont Sub W/In 1000' Area"
+'Sale/Delivery Cocaine W/Int Sell/Deliver'
+'Sale/Delivery Hydrocodone (Lorcet/Vicodin)'
+'Sale/Delivery Of Alprazolam'
+'Sale/Delivery Of Cannabis W/Cons. Or >20Gm'
+'Sale/Delivery Of Cocaine'
+'Sale/Delivery Of Controlled Substance'
+'Sale/Delivery Of Heroin'
+'Sale/Delivery Of Heroin > 10 Grams'
+'Sale/Delivery Of Methamphetamine'
+'Sanitary Nuisance'
+'Scheme To Defraud (<$20000)'
+'Scheme To Defraud (<$300)'
+'Scheme To Defraud (>$300) By Communication'
+'Scheme To Defraud (>=$50000)'
+'Second Degree Felony Murder With A Firearm'
+'Second Degree Murder'
+'Sex Bat On Person 18 Years Or Older'
+'Sex Bat/Person 12-18 By Per >=18 Ment Def'
+'Sex Battery Of Person Between 12Y And 18Y'
+'Sex Off.-Transient Fail Rpt Every 30 Days'
+'Sex Offender Violation-Fail To Register As Require'
+'Sex Offender Violation-Fail To Report Email Addres'
+'Sex Offender Violation-Fail To Report Vaca'
+'Sex Offender Violation-Fail To Reregister As Requi'
+'Sex Offender Violation-Transient Fail To R'
+'Sex Offender Violations-Fail To Report Name Or Res'
+'Sex Pred Violation-Fail To Report Name Or Residenc'
+'Sexual Act. With 16 Or 17 Year Old Child'
+'Sexual Activity With A Child'
+'Sexual Battery'
+'Sexual Battery (Physically Helpless)'
+'Sexual Battery - Child Under 16'
+'Sexual Battery -Not Likely To Cause Injury'
+'Sexual Battery On A Child Under 12'
+'Sexual Battery On Child 12-17 By Pers >=18'
+'Sexual Battery On Person >=18 By Pers >=18'
+'Sexual Battery W/Deadly Weapon/Phy. Force'
+'Sexual Cyberharassment'
+'Sexual Performance By A Child'
+'Shoot/Throw Missile Into Dwell/Struct/Veh.'
+'Shooting At Within Or Into A Building'
+'Shooting From A Vehicle'
+"Shooting From Vehicle W/In 1000' Of Person"
+'Shooting/Throwing Into Occupied Vehicle'
+'Shoplifting-Petit From Merchant 2Nd Or Subsq Off'
+'Showing Obscene Material To A Minor'
+'Solici To Commit Pros/Lewd/Assig (Sub Off)'
+'Solicit. To Commit Sexual Activity W/Child'
+'Solicit.To Commit Prostitution/Assignation'
+'Solicitation To Commit Lewdness'
+'Solicitation To Commit Pros/Lewd/Assig'
+'Solicitation To Commit Prostitution'
+'Solicitation Violation'
+'Soliciting Funds From Unauthorized Roadway'
+'Soliciting W/O Permit'
+'Stalking'
+'Stalking (Dating Violence)'
+'Stalking (Domestic Violence)'
+'State Misdemeanors'
+'Tampering W/Coin Operated Machine(Sub Off)'
+'Tampering W/Witness To Hinder Comm. To Leo'
+'Tampering With A Witness'
+'Tampering With A Witness (F1 Proceeding)'
+'Tampering With A Witness (F3 Proceeding)'
+'Tampering With A Witness (Misd Proceeding)'
+'Tampering With Physical Evidence'
+'Theft By Employee'
+'Theft From Food Service Establishment'
+'Theft From Public Lodging Estab.'
+'Theft Of State Funds > $100000'
+'Theft Of State Funds >$20000 <$100000'
+'Theft Of State Funds >$300 <$20000'
+'Third Degree Murder (Fel. Murd)(W/Firearm)'
+'Threat To Leo Pub Offl. Or Family Member'
+'Threat-Throw/Place/Discharge Dest. Device'
+'Threatening A Public Servant'
+'Throw Deadly Missile AtInto Occupied Veh.'
+'Traf. 10G 34-Methyle.-Metham (Mdma)/Weap.'
+'Trafficking In Amphetamines >28 <200 Gms'
+'Trafficking In Cannabis'
+'Trafficking In Cannabis >25 Lbs. W/Firearm'
+'Trafficking In Cannabis >25 Lbs/300 Plants'
+'Trafficking In Cocaine >200 <400 Grams'
+'Trafficking In Cocaine >28 <200 Grams'
+'Trafficking In Cocaine >28 Gms<150Kgrams'
+'Trafficking In Cocaine >28 Grams W/Firearm'
+'Trafficking In Cocaine >400 Grams'
+'Trafficking In Controlled Substance >4 Gms'
+'Trafficking In Heroin >14 <28 Grams'
+'Trafficking In Heroin >28 Grams'
+'Trafficking In Heroin >4 <14 Grams'
+'Trafficking In Heroin >4 Gms<30 Kilograms'
+'Trafficking In Heroin >4<14 (W/A Weapon)'
+'Trafficking In Methamphetamines >14 Grams'
+'Trafficking In Methamphetamines >28 Grams'
+'Trafficking In Oxycodone >28 Grams'
+'Trafficking In Oxycodone >=14G - <25G'
+'Trafficking In Oxycodone >=7G - <14Gr'
+'Trafficking In Phenethylamines >10 Grams'
+'Trafficking/Amphetamines >200 Gm.W/Firearm'
+'Trans Material Harmful Minor-Other Jurisd'
+'Transmission Of Child Pornography'
+'Transp Dangerous Material-Unlawful Conveya'
+'Tres.-School Grounds Or Fac. After Warning'
+'Trespass'
+'Trespass (Simple)'
+'Trespass After Warning In Conveyance'
+'Trespass In Conveyance'
+'Trespass In Dwelling'
+'Trespass In Dwelling After Warning'
+'Trespass In Occ. Structure Or Curtilage'
+'Trespass In Occupied Conveyance'
+'Trespass In Occupied Structure'
+'Trespass In Occupied Structure/Conveyance'
+'Trespass In Structure'
+'Trespass In Structure (Refusal To Leave)'
+'Trespass In Unoccupied Conveyance'
+'Trespass In Unoccupied Structure'
+'Trespass Occup. Struc. (Refusal To Leave)'
+'Trespass On Designated Construction Site'
+'Trespass On Property After Warning'
+'Trespass On School Grounds Or Facility'
+'Trespass-Other Than Str/Cov. (Ref. Leave)'
+'Trespass/Prop Other Struc/Conv-Curtilage'
+'Trespass/Prop. Other Than Struct. Or Conv.'
+'Trespassing In Structure Or Conveyance'
+'Trespassing-Entry On Property Unlawfully'
+'Trf >=10<200 Gms 34-Methyle.-Meth (Mdma)'
+'Trf >=200<400 Gms 34-Methyle.-Meth(Mdma)'
+'Trf. Hydrocodone (Lorcet/Vicodin) >28 Gms.'
+'Trf. Hydromorphone(Dilaudid) >4 <14 Grams'
+'Unauthorized Poss. Of Ficticious Fl. D.L.'
+'Unauthorized Possession Of An Ident. Card'
+'Unl Solic./Towing Serv. By Unaut. Operator'
+'Unlawful Discharge Of Firearm'
+'Unlawful Poss. Of Concealed Handcuff Key'
+'Unlawful Possess. Stolen Credit/Debit Card'
+'Unlawful Use Of A Two-Way Commun. Device'
+'Unlawful Use Of Commercial Right-Of-Way'
+'Unlawful Use Of License'
+'Urinating Or Defecating In Public'
+'Use Antishoplifting/Inven. Control Device'
+'Use Of Flashing Or Rotating Blue Light'
+'Use Of Reencoder To Defraud'
+'Use Of Scanning Device/Recorder To Defraud'
+'Using False/Fict. Name - Drivers Lic. App.'
+'Using Firearm Under The Influence/Alcohol'
+'Using Foreign Dl & Fl Dl Suspended'
+'Uttering A Counterfeit Credit Card'
+'Uttering A Forged Check'
+'Uttering Forged Bills / Notes'
+'Uttering Forged Prescription'
+'Uttering Forgery'
+'Vehicular Homicide'
+'Video Voyeurism 19 Yoa Or Older 1St Off'
+'Video Voyeurism Dissemination 1St Off'
+'Video Voyeurism Younger Than 19 Yoa 1St Off'
+'Viol. Injunc./Sex. Vio./ W/In 500 Feet'
+'Violation Non-Resident Requirement-Tag'
+'Violation Of Community Control'
+'Violation Of Condition Of Pretrial Release'
+'Violation Of Conditional Release'
+'Violation Of County Ordinance'
+'Violation Of Dl Restriction (Bpo)'
+"Violation Of Dom. Inj./Proh. Pl. W/I 500'"
+'Violation Of Domestic Injunction'
+'Violation Of Domestic Injunction/Contact'
+'Violation Of Domestic Injunction/D.V. Act'
+'Violation Of Domestic Injunction/Ref. Vac.'
+'Violation Of Domestic Injunction/Threat'
+'Violation Of Drug Probation'
+'Violation Of Florida Pawnbroker Act'
+'Violation Of Parole'
+'Violation Of Pawnbroker Transaction Form'
+'Violation Of Probation'
+'Violation Of Probation - Out Of County'
+'Violation Of Ptr Cond. On Dom. Viol. Case'
+'Violation Of Repeat Violence Inj/Proh. Pl.'
+'Violation-Temp. Repeat Violence Injunction'
+'Weapon Offense-Engage In Criminal Offense W Weapon'
+'Weapons - Carrying Simulated Firearms'
+'Work Comp Fraud/Evid Of Identity>20K<100K'
+'Work Comp Fraud/Evidence Of Identity <$20K'
+'Work Comp Fraud/Evidence Of Identity>$100K'
+'Written Threats To Kill Or Do Bodily Harm'
