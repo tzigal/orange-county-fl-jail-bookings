@@ -2,7 +2,7 @@
 
 A Python script to download, scrape, and analyze bookings data from the Orange County Jail in Orlando, Florida. This data reflects only arrests, not convictions. Not everyone arrested for a crime will be convicted of it. 
 Use scrape.py to download and parse today's data, then use combine_and_analyze_scrape_output.py to enter a crime and get data about people arrested by age, gender, and race. 
-Some notes on how the Orange County Jail collects race data: They have two categories for race, white and black, and seperately collect information on Hispanic or non-Hispanic ethnicity. This is an imperfect reflection that leaves out a lot of other groups. 
+Some notes on how the Orange County Jail collects race data: They often use two categories for race, white and black, and seperately collect information on Hispanic or non-Hispanic ethnicity. This is an imperfect reflection that leaves out a lot of other groups. 
 
 A list of crimes, as they appear in the database. They are also available as a file in the repository: allcrimenames.txt
 
