@@ -1,16 +1,22 @@
-#See README for more information on data. Enter the crime you are interested in on line 191.
+#enter directory paths in lines 10 and 11 (data home and analysis)
+#enter name of crime in line 267
+
 import pickle
 import os
 import itertools
 import matplotlib.pyplot as plt
 from collections import Counter as counter
 import numpy as np
+import re
+
+#directories are for PC -- for a Mac-friendly format, use forwar slashes and start with /Users/
+directory = [r'ENTER DIRECTORY PATH HERE']
+analysis_directory = [r'ENTER DIRECTORY PATH HERE']
+os.chdir(directory)
 
 def list_files_in_directory():
-    #os.chdir('/Users/Gal/Dropbox/Crime-clusters/scraping/output/')
-    #for file in os.listdir('.'):
-   pkl_list = [file for file in os.listdir('/Users/Gal/Dropbox/Crime-clusters/scraping/output/')\
-           if file.endswith('.pkl')]
+   pkl_list = [file for file in os.listdir(directory)\
+   if file.endswith('.pkl')]
    return pkl_list
 
 def combine_files():
@@ -24,7 +30,7 @@ def combine_files():
 def make_list_of_crime_types():
     crime_types = []
     for i in range (0, len(combined_data)):
-        crime_types.append(combined_data[i][8])
+        crime_types.append(combined_data[i][9])
     merged_list = list(itertools.chain(*crime_types)) 
     crime_types = set(merged_list)
     return crime_types
@@ -32,15 +38,15 @@ def make_list_of_crime_types():
 def list_crime_names_for_analysis(): #this is a check to see if subsequent functions are capturing all the crimes
     crime_types_for_analysis = []
     for i in range (0, len(combined_data)):
-        if crime_name_master in ' '.join(combined_data[i][8]):
-            crime_types_for_analysis.append(combined_data[i][8])#to get full data for each offence, remove [8]
+        if crime_name_master in ' '.join(combined_data[i][9]):
+            crime_types_for_analysis.append(combined_data[i][9])#to get full data for each offence, remove [8]
     return crime_types_for_analysis
 
 def analyze_crime_type_by_age():
     crime_age = []
     for i in range (0, len(combined_data)):
-        if crime_name_master in ' '.join(combined_data[i][8]):
-            crime_age.append(combined_data[i][5])
+        if crime_name_master in ' '.join(combined_data[i][9]):
+            crime_age.append(int(combined_data[i][6]))
     plt.figure(1)
     plt.clf()
     num_bins = 20
@@ -58,12 +64,12 @@ def analyze_crime_type_by_gender():
     crime_gender_male = []
     crime_gender_female = []
     for i in range (0, len(combined_data)):
-        if crime_name_master in ' '.join(combined_data[i][8]):
-            crime_gender.append(combined_data[i][3])
-            if 'Male' in (combined_data[i][3]):
-                crime_gender_male.append(combined_data[i][3])
-            elif 'Female' in (combined_data[i][3]):
-                crime_gender_female.append(combined_data[i][3])
+        if crime_name_master in ' '.join(combined_data[i][9]):
+            crime_gender.append(combined_data[i][4])
+            if 'Male' in (combined_data[i][4]):
+                crime_gender_male.append(combined_data[i][4])
+            elif 'Female' in (combined_data[i][4]):
+                crime_gender_female.append(combined_data[i][4])
     
      #calculate percentages
     crime_gender_male_percentage = (len(crime_gender_male)/len(crime_gender))*100
@@ -72,7 +78,7 @@ def analyze_crime_type_by_gender():
     # Data to plot
     labels = 'Male','Female'
     sizes = [len(crime_gender_male), len(crime_gender_female)]
-    colors = ['red', 'blue']
+    colors = ['blue', 'red']
      
     # Plot
     plt.figure(2)
@@ -90,51 +96,68 @@ def analyze_crime_type_by_race():
     crime_race_black_hispanic = []
     crime_race_white = []
     crime_race_white_hispanic = []
+    crime_race_asian = []
     crime_race_unknown = []
     for i in range (0, len(combined_data)):
-        if crime_name_master in ' '.join(combined_data[i][8]):
-            crime_race.append(combined_data[i][2])
-            if 'Black' in (combined_data[i][2]) and 'Non-Hispanic' in (combined_data[i][4]):
+        if crime_name_master in ' '.join(combined_data[i][9]):
+            crime_race.append(combined_data[i][3])
+            if 'Black' in (combined_data[i][3]) and 'Non-Hispanic' in (combined_data[i][5]):
                 temp_list = [] #to prevent adding two variables per person
-                temp_list.append(combined_data[i][2])
-                temp_list.append(combined_data[i][4])
+                temp_list.append(combined_data[i][3])
+                temp_list.append(combined_data[i][5])
                 crime_race_black.append(temp_list)
-            elif 'Black' in (combined_data[i][2]) and 'Hispanic' in (combined_data[i][4]):
+            elif 'Black' in (combined_data[i][3]) and 'Hispanic' in (combined_data[i][5]):
                 temp_list = []
-                temp_list.append(combined_data[i][2])
-                temp_list.append(combined_data[i][4])
+                temp_list.append(combined_data[i][3])
+                temp_list.append(combined_data[i][5])
                 crime_race_black_hispanic.append(temp_list)
-            elif 'White' in (combined_data[i][2]) and 'Non-Hispanic' in (combined_data[i][4]):
+            elif 'White' in (combined_data[i][3]) and 'Non-Hispanic' in (combined_data[i][5]):
                 temp_list = []
-                temp_list.append(combined_data[i][2])
-                temp_list.append(combined_data[i][4])
+                temp_list.append(combined_data[i][3])
+                temp_list.append(combined_data[i][5])
                 crime_race_white.append(temp_list)
-            elif 'White' in (combined_data[i][2]) and 'Hispanic' in (combined_data[i][4]):
+            elif 'White' in (combined_data[i][3]) and 'Hispanic' in (combined_data[i][5]):
                 temp_list = []
-                temp_list.append(combined_data[i][2])
-                temp_list.append(combined_data[i][4])
+                temp_list.append(combined_data[i][3])
+                temp_list.append(combined_data[i][5])
                 crime_race_white_hispanic.append(temp_list)
-            elif 'Unknown' in (combined_data[i][2]):
-                crime_race_unknown.append(combined_data[i][2])
+            elif 'Asian' in (combined_data[i][3]):
+                temp_list = []
+                temp_list.append(combined_data[i][3])
+                temp_list.append(combined_data[i][5])
+                crime_race_asian.append(temp_list)
+            elif 'Unknown' in (combined_data[i][3]):
+                crime_race_unknown.append(combined_data[i][3])
                 
     #calculate percentages
     crime_race_black_percent = (len(crime_race_black)/len(crime_race))*100
     crime_race_black_hispanic_percent = (len(crime_race_black_hispanic)/len(crime_race))*100
     crime_race_white_percent = (len(crime_race_white)/len(crime_race))*100
     crime_race_white_hispanic_percent = (len(crime_race_white_hispanic)/len(crime_race))*100
+    crime_race_asian_percent = (len(crime_race_asian)/len(crime_race))*100
     crime_race_unknown_percent = (len(crime_race_unknown)/len(crime_race))*100
                     
     # Data to plot 
-    if len(crime_race_unknown) == 0.0:
+    if len(crime_race_unknown) == 0.0 and len(crime_race_asian) != 0.0:
+        sizes = [len(crime_race_black), len(crime_race_black_hispanic), len(crime_race_white),\
+        len(crime_race_white_hispanic), len(crime_race_asian)]
+        labels = 'Black','Black and Hispanic','White','White and Hispanic','Asian'
+        colors = ['darkgreen', 'seagreen','lightseagreen','mediumspringgreen','g']
+    elif len(crime_race_asian) == 0.0 and len(crime_race_unknown) != 0.0:
+        sizes = [len(crime_race_black), len(crime_race_black_hispanic), len(crime_race_white),\
+        len(crime_race_white_hispanic), len(crime_race_unknown)]
+        labels = 'Black','Black and Hispanic','White','White and Hispanic','Unknown'
+        colors = ['darkgreen', 'seagreen','lightseagreen','mediumspringgreen','g']
+    elif len(crime_race_asian) == 0.0 and len(crime_race_unknown) == 0.0:
         sizes = [len(crime_race_black), len(crime_race_black_hispanic), len(crime_race_white),\
         len(crime_race_white_hispanic)]
         labels = 'Black','Black and Hispanic','White','White and Hispanic'
         colors = ['darkgreen', 'seagreen','lightseagreen','mediumspringgreen']
     else:
         sizes = [len(crime_race_black), len(crime_race_black_hispanic), len(crime_race_white),\
-        len(crime_race_white_hispanic),len(crime_race_unknown)]
-        labels = 'Black','Black and Hispanic','White','White and Hispanic','Unknown'
-        colors = ['darkgreen', 'seagreen','lightseagreen','mediumspringgreen','c']
+        len(crime_race_white_hispanic),len(crime_race_asian),len(crime_race_unknown)]
+        labels = 'Black','Black and Hispanic','White','White and Hispanic','Asian','Unknown'
+        colors = ['darkgreen', 'seagreen','lightseagreen','mediumspringgreen','g','c']
     
     # Plot
     plt.figure(3)
@@ -146,13 +169,13 @@ def analyze_crime_type_by_race():
     return crime_race, crime_race_black, crime_race_black_hispanic, crime_race_white,\
      crime_race_white_hispanic, crime_race_unknown, crime_race_black_percent, \
      crime_race_black_hispanic_percent, crime_race_white_percent ,crime_race_white_hispanic_percent,\
-     crime_race_unknown_percent
+     crime_race_asian_percent, crime_race_unknown_percent
  
 def analyze_crime_type_by_agency():
     crime_agency = []
     for i in range (0, len(combined_data)):
-        if crime_name_master in ' '.join(combined_data[i][8]):
-            crime_agency.append(combined_data[i][6])
+        if crime_name_master in ' '.join(combined_data[i][9]):
+            crime_agency.append(combined_data[i][7])
     agency_counter = counter(crime_agency)
     agency_names = np.asarray(list(agency_counter.keys()))
     agency_numbers = list(agency_counter.values())
@@ -168,9 +191,46 @@ def analyze_crime_type_by_agency():
     
     return crime_agency, agency_counter
 
+def build_data_for_analisis():
+    data_by_crime = []
+    #Go over raw data line by line
+    for i in range(len(combined_data)):
+        if crime_name_master in ' '.join(combined_data[i][9]):
+            sublist = []
+            #Put into columns of sublist 
+            sublist.append(combined_data[i][0])
+            sublist.append(combined_data[i][1])
+            sublist.append(re.sub('[ ]', '', combined_data[i][2]))
+            sublist.append(combined_data[i][3])
+            sublist.append(combined_data[i][4])
+            sublist.append(combined_data[i][5])
+            sublist.append(combined_data[i][6])
+            sublist.append(combined_data[i][7])
+            sublist.append(combined_data[i][9])
+            data_by_crime.append(sublist)
+            
+    
+    return data_by_crime
+
 def print_to_file():
-    # open output text file 
-    filename= crime_name_master+' analysis.txt'
+    os.chdir(analysis_directory)
+    crime_name_title = crime_name_master
+    if "<" in crime_name_title:
+        crime_name_title = re.sub('[<]', 'Less Than ', crime_name_title)
+    if ">" in crime_name_title:
+        crime_name_title = re.sub('[>]', 'More Than ', crime_name_title)
+    if "=" in crime_name_title:
+        crime_name_title = re.sub('[=]', '', crime_name_title)
+    if "/" in crime_name_title:
+        crime_name_title = re.sub('[/]', ' or ', crime_name_title)
+    if "(" in crime_name_title:
+        crime_name_title = re.sub('[(]', '', crime_name_title)
+    if ")" in crime_name_title:
+        crime_name_title = re.sub('[)]', '', crime_name_title)
+    if "#" in crime_name_title:
+        crime_name_title = re.sub('[#]', 'Number', crime_name_title)
+     
+    filename= crime_name_title+' analysis.txt'
     file_text_output=open(filename,'w')
     # print summary of clustering results:
     print(("Total number of arrests for ", crime_name_master,":",len(crime_age)), file=file_text_output)
@@ -182,13 +242,29 @@ def print_to_file():
     print("Percent black and Hispanic: ",crime_race_black_hispanic_percent, file=file_text_output)
     print("Percent white: ",crime_race_white_percent, file=file_text_output)
     print("Percent white and Hispanic: ",crime_race_white_hispanic_percent, file=file_text_output)
+    print("Percent Asian: ", crime_race_asian_percent, file=file_text_output)
     print("Number of arrests per agency: ", file=file_text_output)
     print(agency_counter, file=file_text_output)
+    print(file=file_text_output)
+    print(file=file_text_output)
+    print('booking_number, ',', last_name,','first_name,', 'date,', 'race,', 'gender,','ethnicity,','age,','department,','crime', file=file_text_output)
+    for i in range (len(data_by_crime)):
+        print(data_by_crime[i][0],',', data_by_crime[i][1],',', data_by_crime[i][2],',',\
+               data_by_crime[i][3],',', data_by_crime[i][4],',', data_by_crime[i][5],',',\
+        data_by_crime[i][6],',', data_by_crime[i][7],',', data_by_crime[i][8], file=file_text_output)
+
     # close output file
     file_text_output.close()
+    
+    filename= 'allcrimenames.txt'
+    file_text_output=open(filename,'w')
+    # print summary of clustering results:
+    print(sorted(crime_types), file=file_text_output)
+    file_text_output.close()
+
 
 ##main program
-crime_name_master = 'Theft'
+crime_name_master = "Battery"
 pkl_list = list_files_in_directory()
 combined_data = combine_files()
 crime_types = make_list_of_crime_types()
@@ -199,6 +275,7 @@ crime_gender, crime_gender_male, crime_gender_female,\
 crime_race, crime_race_black, crime_race_black_hispanic, crime_race_white,\
      crime_race_white_hispanic, crime_race_unknown, crime_race_black_percent, \
      crime_race_black_hispanic_percent, crime_race_white_percent ,crime_race_white_hispanic_percent,\
-     crime_race_unknown_percent = analyze_crime_type_by_race()
+     crime_race_asian_percent, crime_race_unknown_percent = analyze_crime_type_by_race()
 crime_agency, agency_counter = analyze_crime_type_by_agency()
+data_by_crime = build_data_for_analisis()
 print_to_file()
