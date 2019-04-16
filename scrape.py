@@ -1,22 +1,20 @@
-# can use pdf2txt.py bookings.pdf -o bookings.txt as part of this code
-#If code breaks, try changing the four-digit number in line 50 to match current booking sheet.
+#This program uses PDF2TXT. Download it here: https://www.pdf2txt.com/ and save in the same directory as this file.
 from ftplib import FTP
 import os
 import re
 import pickle
+import csv
+import smtplib, ssl
 
 def ftp_get_pdf():
     ftp = FTP('ftp.ocfl.net')     # connect to host, default port
     ftp.login()                     # user anonymous, passwd anonymous@
     ftp.cwd('divisions/corrections/pub')               # change into "debian" directory
-    #ftp.retrlines('LIST')           # list directory contents
     ftp.retrbinary('RETR bookings.pdf', open('bookings.pdf', 'wb').write)
     ftp.quit()
 
 def extract_text_from_pdf():
-    os.system('cd ###YOUR_DIRECTORY_HERE###; java -jar pdfbox-app-2.0.12.jar ExtractText bookings.pdf bookings.txt')
-#print(extract_text_from_pdf('bookings.pdf'))
-  
+    os.system('java -jar pdfbox-app-2.0.12.jar ExtractText bookings.pdf bookings.txt') 
 
 def extract_date_from_text_file():
     #read file
@@ -29,37 +27,59 @@ def extract_date_from_text_file():
             date = content[line]
             if date.startswith("BEGINNING AT MIDNIGHT"):
                 return date[23:] #delete unnecessary wording in string
+                date = re.sub('[ ]', '', date)
     return date
     
 def process_text_file():    
     with open('bookings.txt') as f:
         content = f.readlines()
-    # you may also want to remove whitespace characters like `\n` at the end of each line
     content = [x.strip() for x in content] 
     
-    #Loop over all elements of content#
+    #Loop over all elements of content, which contain all arrests
     data_raw = []        
-    sublist = []
-    first_record_flag = 1
-    for line in range(len(content)):
-        #print(content[line])
+    current_arrestee = []
+    first_arrestee_flag = 1
+    for line in range(0, len(content)):
     
-        #If line contains 1803:
-        #1. Put previous sublist in the data; 
-        #2. Start a new sublist and put the line into it#
-        if "1803" in content[line]: 
-            if first_record_flag == 0:
-                data_raw.append(sublist)
-            first_record_flag = 0
-            sublist = []
-            sublist.append(content[line])
+        #If line contains certain markers, it is the first line for a new arrestee:
+        if " BRC" in content[line] or " --" in content[line]\
+        or "FDC" in content[line] or "MAIN-" in content[line]:
+            if first_arrestee_flag == 0:
+                #Add previous arrestee to data_raw
+                data_raw.append(current_arrestee)
+            first_arrestee_flag = 0
+            #Start a new sublist for a new arrestee 
+            current_arrestee = []
+            #Add current line to new arrestee
+            current_arrestee.append(content[line])
             
-        #If current record is not the first for a new suspect, add to previous sublist#
         else:
-            sublist.append(content[line])
-            
+            #If this is not the first line: Add to the record of the current arrestee
+            current_arrestee.append(content[line])
+    
+    #Sve the last arrestee to data_raw
+    data_raw.append(current_arrestee)        
+    
     return data_raw    
 
+def label_booking_number(line):
+    if " / M" in ' '.join(data_raw[line]):
+        str_male = " / M"
+        index = ' '.join(data_raw[line]).index(str_male)
+        booking_number = re.sub('[ / M]', '', data_raw[line][0][index:][:12])
+    elif " / F" in ' '.join(data_raw[line]):
+        str_female = " / F"
+        index = ' '.join(data_raw[line]).index(str_female)
+        booking_number = re.sub('[ / F]', '', data_raw[line][0][index:][:12])
+    else:
+        booking_number = "Booking number not found"
+        print('Booking number not found for line ', line)
+         
+    if len(booking_number) == 8:
+        return booking_number
+    else:
+        print ("Check booking number for line ", line)
+    
 #Create name column by taking the first item in the list and cutting it off 
 #at the end of the name, which is the cell location
 def label_name(line):
@@ -67,12 +87,12 @@ def label_name(line):
     str_brc = " BRC"
     str_dashes = " --"
     str_fdc = " FDC"
-    str_main = " MAIN"
+    str_main = "MAIN-"
     if "BRC" in ' '.join(data_raw[line]):
         index = data_raw[line][0].index(str_brc)
     elif "FDC" in ' '.join(data_raw[line]):
         index = data_raw[line][0].index(str_fdc)
-    elif "MAIN" in ' '.join(data_raw[line]):
+    elif "MAIN-" in ' '.join(data_raw[line]):
         index = data_raw[line][0].index(str_main)
     elif "--" in ' '.join(data_raw[line]):
         index = data_raw[line][0].index(str_dashes)
@@ -89,6 +109,8 @@ def label_name(line):
 
 #Create race and gender columns
 def label_race_gender(line):
+    race = []
+    gender = []
     if "W / M" in ' '.join(data_raw[line]):
         race = "White"
         gender = "Male"
@@ -101,6 +123,21 @@ def label_race_gender(line):
     elif "B / F" in ' '.join(data_raw[line]):
         race = "Black"
         gender = "Female"
+    elif "A / M" in ' '.join(data_raw[line]):
+        race = "Asian"
+        gender = "Male"
+    elif "A / F" in ' '.join(data_raw[line]):
+        race = "Asian"
+        gender = "Female"
+    elif "I / M" in ' '.join(data_raw[line]):
+        race = "Native"
+        gender = "Male"
+    elif "I / F" in ' '.join(data_raw[line]):
+        race = "Native"
+        gender = "Female"
+    elif "U / M" in ' '.join(data_raw[line]):
+        race = "Unknown"
+        gender = "Male"
     elif "U / F" in ' '.join(data_raw[line]):
         race = "Unknown"
         gender = "Female"
@@ -145,6 +182,7 @@ def label_age(line):
         str = data_raw[line][0]
         age = int(str[-2:])
         #print("Non-numeric data found in the file")
+   
     if age not in range(15,120):
         print("Did not find age in range for line", line)
     return age
@@ -157,7 +195,9 @@ def label_law_enforcement_agency(line):
     elif "BELLE ISLE POLICE DEPARTMENT" in ' '.join(data_raw[line]):
         agency = "Belle Isle Police Department"
     elif "BONDING AGENCY" in ' '.join(data_raw[line]):
-        agency = "Bonding agency"    
+        agency = "Bonding agency"
+    elif "DIV OF STATE FIRE MARSHALL" in ' '.join(data_raw[line]):
+        agency = "State Fire Marshall"
     elif "DRUG ENFORCEMENT AGENCY" in ' '.join(data_raw[line]):
         agency = "DEA"
     elif "EATONVILLE PD" in ' '.join(data_raw[line]):
@@ -241,6 +281,7 @@ def build_data():
     for line in range(len(data_raw)): 
         sublist = []
         #Extract date, gender, race, ethnicity, crime designation
+        booking_number = label_booking_number(line)
         name = label_name(line)
         date = extract_date_from_text_file()
         race, gender = label_race_gender(line)
@@ -250,6 +291,7 @@ def build_data():
         crime_designation = label_misdemeanor_or_felony(line)
         crime = label_crime(line)
         #Put into columns of sublist 
+        sublist.append(booking_number)
         sublist.append(name)
         sublist.append(date)
         sublist.append(race)
@@ -263,7 +305,7 @@ def build_data():
         
     
     return data
-
+  
 def save_data():
     with open('data.pkl', 'wb') as f:  # Python 3: open(..., 'wb')
         pickle.dump([data], f)
@@ -271,19 +313,14 @@ def save_data():
 #Rename file with date
 def rename_file():
     date_file_name = re.sub('[/]', '.', date)
-    command_string = 'mv bookings.pdf output/bookings_' + date_file_name +'.pdf' 
+    command_string = '/bin/mv -f bookings.pdf output/bookings_' + date_file_name +'.pdf' 
     os.system(command_string)
-    command_string = 'mv bookings.txt output/bookings_' + date_file_name +'.txt' 
+    command_string = '/bin/mv -f bookings.txt output/bookings_' + date_file_name +'.txt' 
     os.system(command_string)
-    command_string = 'mv data.pkl output/bookings_' + date_file_name +'.pkl'
-    os.system(command_string)
-    '''
-    command_string = 'mv output/output.csv output/output_' + date_file_name +'.csv'
-    os.system(command_string)
-    command_string = 'mv output/output.txt output/output_' + date_file_name +'.txt'
-    os.system(command_string)
-    '''
+    command_string = '/bin/mv -f data.pkl output/bookings_' + date_file_name +'.pkl'
+    os.system(command_string)  
     
+
 ########################################################################
 # Main program:
 ########################################################################
